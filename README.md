@@ -6,10 +6,10 @@ Cloudlock is a distributed lock based on cloud storage. It uses a bucket to stor
 
 ## Supported environments
 
-- Google Cloud [✓]
-- AWS S3       []
-- Minio        []
-- Github
+- [x] Google Cloud 
+- [ ] AWS S3       
+- [ ] Minio        
+- [ ] Github
 
 
 ## Instalation
