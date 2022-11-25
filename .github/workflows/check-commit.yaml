@@ -18,7 +18,7 @@ concurrency:
 jobs:
   check-commit:
     if: github.event.pull_request.merged == false
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
