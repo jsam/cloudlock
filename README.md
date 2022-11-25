@@ -1,7 +1,7 @@
 # cloudlock
 
 Regular filelock, but in cloud. 
----
+-------
 
 Cloudlock is a distributed lock based on cloud storage. It uses a bucket to store a lock file. When a lock is acquired, the lock file is created. When the lock is released, the lock file is deleted. Great for distributed CI/CD pipelines or any kind of coordination between multiple processes.
 
