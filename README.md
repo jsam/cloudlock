@@ -30,7 +30,7 @@ export GCP_PROJECT_ID=
 
 or via the command line:
 ```bash
-cl lock my-lock --project <project_id> --service-account ~/svc.json
+cl [command] [args] --project <project_id> --service-account <svc_account_path>
 ```
 
 
