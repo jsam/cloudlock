@@ -38,9 +38,12 @@ cl [command] [args] --project <project_id> --service-account <svc_account_path>
 
 ## Usage
 
+### Create a lock
 ```bash
-cl lock ci-lock-deployment
-<locked command>
-cl unlock ci-lock-deployment
+cl lock [lock-name]
 ```
 
+### Release a lock
+```bash
+cl unlock [lock-name]
+```
