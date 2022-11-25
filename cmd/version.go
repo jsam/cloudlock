@@ -19,10 +19,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-package main
+package cmd
 
 import (
-	"github.com/jsam/cloudlock/cmd"
+	"fmt"
+
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -35,14 +37,22 @@ var (
 	BuildHash    string
 )
 
-func main() {
-	cmd.GitCommit = GitCommit
-	cmd.GitBranch = GitBranch
-	cmd.GitTag = GitTag
-	cmd.GitDirty = GitDirty
-	cmd.BuildDate = BuildDate
-	cmd.BuildVersion = BuildVersion
-	cmd.BuildHash = BuildHash
+// versionCmd represents the version command
+var versionCmd = &cobra.Command{
+	Use:   "version",
+	Short: "Check the tool version",
+	Long:  `Check the tool version`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("GitCommit: ", GitCommit)
+		fmt.Println("GitBranch: ", GitBranch)
+		fmt.Println("GitTag: ", GitTag)
+		fmt.Println("GitDirty: ", GitDirty)
+		fmt.Println("BuildDate: ", BuildDate)
+		fmt.Println("BuildVersion: ", BuildVersion)
+		fmt.Println("BuildHash: ", BuildHash)
+	},
+}
 
-	cmd.Execute()
+func init() {
+	rootCmd.AddCommand(versionCmd)
 }
