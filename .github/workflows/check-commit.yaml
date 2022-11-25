@@ -26,7 +26,7 @@ jobs:
       - name: Setup GCloud
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          service_account_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
           export_default_credentials: true
 
@@ -35,7 +35,7 @@ jobs:
         uses: timheuer/base64-to-file@v1
         with:
           fileName: "key.json"
-          encodedString: ${{ secrets.GCLOUD_SERVICE_KEY }}
+          encodedString: ${{ secrets.GCP_SERVICE_ACCOUNT }}
       
       - name: Configure System and Project
         run: |
