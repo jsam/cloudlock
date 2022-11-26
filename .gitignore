@@ -1,3 +1,5 @@
 bin/*
 cloudlock
 cl
+
+dist/
