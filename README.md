@@ -31,7 +31,7 @@ export GCP_PROJECT_ID=
 
 or via the command line:
 ```bash
-cl [command] [args] --project <project_id> --service-account <svc_account_path>
+cloudlock [command] [args] --project <project_id> --service-account <svc_account_path>
 ```
 
 
@@ -40,10 +40,10 @@ cl [command] [args] --project <project_id> --service-account <svc_account_path>
 
 ### Create a lock
 ```bash
-cl lock [lock-name]
+cloudlock lock [lock-name]
 ```
 
 ### Release a lock
 ```bash
-cl unlock [lock-name]
+cloudlock unlock [lock-name]
 ```
