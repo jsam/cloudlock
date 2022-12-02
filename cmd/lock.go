@@ -29,6 +29,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	LockNoWait bool = false
+)
+
 // lockCmd represents the lock command
 var lockCmd = &cobra.Command{
 	Use:   "lock",
@@ -48,7 +52,7 @@ var lockCmd = &cobra.Command{
 	},
 	Run: func(cmd *cobra.Command, args []string) {
 		gcs := cloudlock.NewGCS(cloudlock.CloudlockBucket)
-		err := gcs.Lock(args[0], nil, true)
+		err := gcs.Lock(args[0], nil, !LockNoWait)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -59,14 +63,6 @@ var lockCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(lockCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// lockCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// lockCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	lockCmd.Flags().BoolVarP(&LockNoWait, "no-wait", "n", false, "Do not wait for the lock to be released.")
 
 }

@@ -107,6 +107,8 @@ func (gcs *GCS) Lock(lockname string, payload []byte, wait bool) error {
 		if isReleased {
 			return returnValue
 		}
+	} else if !wait && objectAttrs != nil {
+		os.Exit(2)
 	}
 
 	return nil
