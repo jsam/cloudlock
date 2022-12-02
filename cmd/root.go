@@ -56,7 +56,7 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cloudlock.yaml)")
 
-	rootCmd.PersistentFlags().StringVarP(&cloudlock.CloudlockBucket, "bucket", "b", "", "Bucket name")
+	rootCmd.PersistentFlags().StringVarP(&cloudlock.CloudlockBucket, "bucket", "b", "cloudlock", "Bucket name")
 	//lockCmd.MarkFlagRequired("bucket")
 	rootCmd.PersistentFlags().StringVarP(&cloudlock.GcloudProjectId, "project", "p", "", "Project name")
 	//lockCmd.MarkFlagRequired("project")

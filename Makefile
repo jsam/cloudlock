@@ -23,6 +23,7 @@ build:
 	rm -rf bin/
 	@echo ${LDFLAGS}
 	go build -ldflags="${LDFLAGS}" -o bin/cl main.go
+	cp bin/cl ${GOPATH}/bin/cl
 
 test:
 	go test -v ./...
